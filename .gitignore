@@ -1,0 +1,6 @@
+env/
+src/backend/data/*.csv
+.idea
+*.xml
+*.pyc
+*.DS_Store
