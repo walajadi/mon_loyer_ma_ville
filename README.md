@@ -13,6 +13,7 @@ VIRTUALENV:
     - RUN `python3 manage.py init_db_villes`
   - RUN `python manage.py runserver` to launch API
   - Example call: `curl 'http://127.0.0.1:8000/api/villes/93/?surface=50&loyer_max=800'`
+  - Unittests : `python manage.py test`
     
 DOCKER:
   - cd src/
