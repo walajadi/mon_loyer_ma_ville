@@ -2,16 +2,12 @@
     Villes models
 """
 # pylint:disable=too-few-public-methods
-import requests
 
 from django.db import models
 from rest_framework import serializers
 
 from core.models import BaseModel
 from helpers.geoloc import ApiGeoloc
-from helpers.ville_scrapper import VilleScrapper
-
-session = requests.Session()
 
 
 class Ville(BaseModel):
@@ -49,17 +45,6 @@ class VilleSerializer(serializers.ModelSerializer):
         Serializer method
         """
         return ApiGeoloc().get_code_pos(instance)
-
-    def to_representation(self, instance):
-        """
-        Add info from scrapper here.
-        """
-        data = super().to_representation(instance)
-        scrapper = VilleScrapper(instance, session)()
-        nbr, city_note = scrapper.habitants, scrapper.note_vile
-        data["habitants"] = nbr
-        data["note"] = city_note
-        return data
 
 
 class RequestSerializer(serializers.Serializer):  # pylint:disable= abstract-method

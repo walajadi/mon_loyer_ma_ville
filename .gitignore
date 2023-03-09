@@ -1,5 +1,6 @@
 env/
 src/backend/data/*.csv
+src/backend/db.sqlite3
 .idea
 *.xml
 *.pyc
