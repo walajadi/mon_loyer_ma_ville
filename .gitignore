@@ -5,3 +5,4 @@ src/backend/db.sqlite3
 *.xml
 *.pyc
 *.DS_Store
+*.sqlite3

@@ -1,0 +1,4 @@
+# docker build ignored files / liste non exhaustive
+.DS_Store
+*.pyc
+*/test*
