@@ -5,6 +5,8 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 from bs4 import BeautifulSoup
 
+session = requests.Session()
+
 
 class VilleScrapper:
     """
@@ -13,7 +15,7 @@ class VilleScrapper:
 
     CITY_INFO_URL = "https://www.bien-dans-ma-ville.fr"
     UNKNOW_VALUE = "INCONNU"
-    session = requests.Session()
+    session = session
 
     def __init__(self, ville):
         """
