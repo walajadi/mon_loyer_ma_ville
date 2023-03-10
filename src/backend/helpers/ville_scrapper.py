@@ -43,9 +43,9 @@ class VilleScrapper:
         bloc_chiffre = habitant_soup.find("table", class_="bloc_chiffre")
         if bloc_chiffre is None:
             self._nbr_habitant = self.UNKNOW_VALUE
-        nombre_hab = bloc_chiffre.find("tr").find_all("td")[1].text
-        self._nbr_habitant = nombre_hab
-
+        else:
+            nombre_hab = bloc_chiffre.find("tr").find_all("td")[1].text
+            self._nbr_habitant = nombre_hab
         # get note
         note_url = "{}/avis.html".format(ville_url)
         note_res = self.session.get(note_url)
